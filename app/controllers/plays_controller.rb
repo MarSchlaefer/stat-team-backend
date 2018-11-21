@@ -2,7 +2,7 @@ class PlaysController < ApplicationController
 
   def index
     @plays = Play.all
-    render json: @plays
+    render json: @plays, status: :ok
   end
 
   def create

@@ -2,7 +2,7 @@ class CoachesController < ApplicationController
 
   def index
     @coaches = Coach.all
-    render json: @coaches
+    render json: @coaches, status: :ok
   end
 
 end
