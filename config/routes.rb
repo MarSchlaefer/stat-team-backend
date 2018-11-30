@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :games, only: [:index]
   resources :teams, only: [:index, :show]
   resources :coaches, only: [:index, :show]
-  resources :players, only: [:index, :show]
+  resources :players, only: [:index, :show, :update]
   resources :plays, only: [:index, :create]
   mount ActionCable.server => '/cable'
 end

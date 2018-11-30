@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_150426) do
+ActiveRecord::Schema.define(version: 2018_11_30_200533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 2018_11_21_150426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "position"
+    t.integer "ftm"
+    t.integer "fta"
+    t.string "img"
   end
 
   create_table "plays", force: :cascade do |t|
@@ -59,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_11_21_150426) do
     t.integer "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "timer"
+    t.string "result"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -67,6 +72,23 @@ ActiveRecord::Schema.define(version: 2018_11_21_150426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "home"
+    t.string "logo"
+    t.integer "tp"
+    t.integer "fgp"
+    t.integer "fgm"
+    t.integer "fga"
+    t.integer "ygm"
+    t.integer "yga"
+    t.integer "ygp"
+    t.integer "fta"
+    t.integer "ftm"
+    t.integer "ftp"
+    t.integer "pf"
+    t.integer "reb"
+    t.integer "ast"
+    t.integer "stl"
+    t.integer "blk"
+    t.integer "to"
   end
 
 end
