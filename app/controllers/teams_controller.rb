@@ -18,7 +18,7 @@ class TeamsController < ApplicationController
         TeamSerializer.new(@team)
       ).serializable_hash
       ActionCable.server.broadcast 'teams_channel', serialized_data
-      head :ok
+
       render json: @team, status: :ok
     end
   end
@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:game_id, :name, :logo, :home)
+    params.require(:team).permit(:name, :logo, :home, :game_id, :tp, :fgm, :fga, :fgp, :fta, :ftm, :ftp, :ygm, :yga, :ygp, :reb, :ast, :stl, :blk, :to, :pf)
   end
 
 

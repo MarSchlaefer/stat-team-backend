@@ -13,7 +13,7 @@ class PlaysController < ApplicationController
       ).serializable_hash
       ActionCable.server.broadcast 'plays_channel', serialized_data
       head :ok
-      # render json: @play, status: :ok
+      render json: @play, status: :ok
     end
   end
 
