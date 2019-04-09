@@ -18,8 +18,8 @@ class GamesController < ApplicationController
           GameSerializer.new(@game)
         ).serializable_hash
         ActionCable.server.broadcast 'games_channel', serialized_data
-        head :ok
-        render json: @game, status: :ok
+        # head :ok
+        render json: @game, head: :ok
       end
   end
 
